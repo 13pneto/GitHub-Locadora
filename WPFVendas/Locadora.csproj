@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{13A313C7-35BB-407F-891F-103B5C7F1D1E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPFVendas</RootNamespace>
+    <AssemblyName>WPFVendas</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\ClienteDAO.cs" />
+    <Compile Include="DAL\FilmeDAO.cs" />
+    <Compile Include="DAL\FuncionarioDAO.cs" />
+    <Compile Include="DAL\ItemFilmeDAO.cs" />
+    <Compile Include="DAL\LocacaoDAO.cs" />
+    <Compile Include="DAL\PessoaDAO.cs" />
+    <Compile Include="DAL\PremioDAO.cs" />
+    <Compile Include="DAL\PremioFilmeDAO.cs" />
+    <Compile Include="DAL\ProdutoDAO.cs" />
+    <Compile Include="Migrations\201909170112471_RemovidoTableClienteEFuncionario.cs" />
+    <Compile Include="Migrations\201909170112471_RemovidoTableClienteEFuncionario.Designer.cs">
+      <DependentUpon>201909170112471_RemovidoTableClienteEFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909180301152_AddDbSetFuncECliente.cs" />
+    <Compile Include="Migrations\201909180301152_AddDbSetFuncECliente.Designer.cs">
+      <DependentUpon>201909180301152_AddDbSetFuncECliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Context.cs" />
+    <Compile Include="Model\Filme.cs" />
+    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Model\ItemFilme.cs" />
+    <Compile Include="Model\Locacao.cs" />
+    <Compile Include="Model\Pessoa.cs" />
+    <Compile Include="Model\Premio.cs" />
+    <Compile Include="Model\PremioFilme.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Utils\Mensagens.cs" />
+    <Compile Include="Utils\ValidadorCPF.cs" />
+    <Compile Include="Views\Cadastrar\frmCadastrarCliente.xaml.cs">
+      <DependentUpon>frmCadastrarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cadastrar\frmCadastrarFilme.xaml.cs">
+      <DependentUpon>frmCadastrarFilme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cadastrar\frmCadastrarFuncionario.xaml.cs">
+      <DependentUpon>frmCadastrarFuncionario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cadastrar\frmCadastrarPremio.xaml.cs">
+      <DependentUpon>frmCadastrarPremio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Cadastrar\frmCadastrarPremioFilme.xaml.cs">
+      <DependentUpon>frmCadastrarPremioFilme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmPrincipal.xaml.cs">
+      <DependentUpon>frmPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Locacao\frmDevolucaoLocacao.xaml.cs">
+      <DependentUpon>frmDevolucaoLocacao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Locacao\frmLocacao.xaml.cs">
+      <DependentUpon>frmLocacao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\frmEstoqueFilmes.xaml.cs">
+      <DependentUpon>frmEstoqueFilmes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\frmFilmesCadastrados.xaml.cs">
+      <DependentUpon>frmFilmesCadastrados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\frmHistoricoLocacaoXCliente.xaml.cs">
+      <DependentUpon>frmHistoricoLocacaoXCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\frmHistoricoLocacaoXFuncionario.xaml.cs">
+      <DependentUpon>frmHistoricoLocacaoXFuncionario.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201909170112471_RemovidoTableClienteEFuncionario.resx">
+      <DependentUpon>201909170112471_RemovidoTableClienteEFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909180301152_AddDbSetFuncECliente.resx">
+      <DependentUpon>201909180301152_AddDbSetFuncECliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Cadastrar\frmCadastrarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cadastrar\frmCadastrarFilme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cadastrar\frmCadastrarFuncionario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Cadastrar\frmCadastrarPremio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Cadastrar\frmCadastrarPremioFilme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Locacao\frmDevolucaoLocacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Locacao\frmLocacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Relatorios\frmEstoqueFilmes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Relatorios\frmFilmesCadastrados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Relatorios\frmHistoricoLocacaoXCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Relatorios\frmHistoricoLocacaoXFuncionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Listar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

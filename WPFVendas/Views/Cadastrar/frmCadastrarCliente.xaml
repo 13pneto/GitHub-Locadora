@@ -1,0 +1,23 @@
+﻿<Window x:Class="Locadora.Views.Cadastrar.frmCadastrarCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Locadora.Views.Cadastrar"
+        mc:Ignorable="d"
+        Title="Cadastrar Cliente" Height="185.693" Width="333.5" WindowStartupLocation="CenterScreen"> <!--Loaded="Window_Loaded">-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="124*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
+        <Label Content="CPF:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="26" Width="33"/>
+        <TextBox x:Name="txtCPF" MaxLength="11" HorizontalAlignment="Left" Height="23" Margin="27,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TabIndex="1" Grid.Column="1"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="27,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TabIndex="0" Grid.Column="1"/>
+        <Button x:Name="btnCadastrarCliente" Click="BtnCadastrarCliente_Click" Content="Cadastrar" HorizontalAlignment="Left" Margin="91,125,0,0" VerticalAlignment="Top" Width="75" TabIndex="4" Grid.Column="1" RenderTransformOrigin="0.478,0.292" Height="20" />
+        <TextBox x:Name="txtCriadoEm" HorizontalAlignment="Left" Height="23" Margin="27,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TabIndex="3" IsEnabled="False" Grid.Column="1"/>
+        <Label Content="Criado Em:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="26" Width="67"/>
+
+    </Grid>
+</Window>

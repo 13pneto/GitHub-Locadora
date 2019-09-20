@@ -1,0 +1,38 @@
+﻿<Window x:Class="Locadora.Views.frmPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Locadora.Views"
+        mc:Ignorable="d"
+        Title="WPF Vendas" Height="600" Width="800" WindowStartupLocation="CenterScreen" MaxWidth="800" MaxHeight="600" MinWidth="800" MinHeight="600" Closing="Window_Closing">
+    <Grid>
+        <Menu HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="792">
+            <MenuItem Header="_Cadastro" Height="35" Width="77">
+                <MenuItem Header="_Cadastrar Cliente" HorizontalAlignment="Left" Height="35" Width="250" Margin="0,0,-41,0" Name="MenuItem_CadastrarCliente" Click="MenuItem_CadastrarCliente_Click"/>
+                <MenuItem Header="_Cadastrar Filme" HorizontalAlignment="Left" Height="35" Width="250" Name="MenuItem_CadastrarFilme" Click="MenuItem_CadastrarFilme_Click" />
+                <MenuItem Header="_Cadastrar Funcionario" HorizontalAlignment="Left" Height="35" Width="250" Name="MenuItem_CadastrarFuncionario" Click="MenuItem_CadastrarFuncionario_Click" />
+                <MenuItem Header="_Cadastrar Premio" HorizontalAlignment="Left" Height="35" Width="250" Name="MenuItem_CadastrarPremio" Click="MenuItem_CadastrarPremio_Click"  />
+                <MenuItem Header="_Cadastrar Premio em Filme" HorizontalAlignment="Left" Height="35" Width="250" Name="MenuItem_CadastrarPremioFilme" Click="MenuItem_CadastrarPremioFilme_Click"  />
+            </MenuItem>
+            <MenuItem Header="_Locação" Height="35" Width="70">
+                <MenuItem Header="_Cadastrar Locação" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_CadastrarLocacao" Click="MenuItem_CadastrarLocacao_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Listar" Height="35" Width="60">
+                <MenuItem Header="_Listar Clientes" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarClientes" Click="MenuItem_ListarClientes_Click"/>
+                <MenuItem Header="_Listar Filmes" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarFilmes" Click="MenuItem_ListarFilmes_Click"/>
+                <MenuItem Header="_Listar Funcionarios" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarFuncionarios" Click="MenuItem_ListarFuncionarios_Click"/>
+                <MenuItem Header="_Listar Premios" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarPremios" Click="MenuItem_ListarPremios_Click" />
+            </MenuItem>
+            <MenuItem Header="_Relatórios" Height="35" Width="75">
+                <MenuItem Header="_Historico Locações x Filme" HorizontalAlignment="Left" Height="35" Width="260" Name="MenuItem_HistoricoLocacaoXFilme" Click="MenuItem_HistoricoLocacaoXFilme_Click"/>
+                <MenuItem Header="_Historico Locações x Funcionário" HorizontalAlignment="Left" Height="35" Width="260" Name="MenuItem_HistoricoLocacaoXFuncionario" Click="MenuItem_HistoricoLocacaoXFuncionario_Click"/>
+                <MenuItem Header="_Filmes x Qtd. Estoque" HorizontalAlignment="Left" Height="35" Width="260"  Name="MenuItem_FilmesXQtdEstoque" Click="MenuItem_FilmesXQtdEstoque_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Excluir/Editar" Height="35" Width="96">
+                <MenuItem Header="Excluir Filme" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ExcluirFilme" Click="MenuItem_ExcluirFilme_Click" />
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>

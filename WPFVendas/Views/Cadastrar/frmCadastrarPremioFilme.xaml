@@ -1,0 +1,27 @@
+﻿<Window x:Class="Locadora.Views.frmCadastrarPremioFilme"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Locadora.Views.Cadastrar"
+        mc:Ignorable="d"
+        Title="frmCadastrarPremioFilme" Height="207.193" Width="333.5">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="54*"/>
+            <ColumnDefinition Width="109*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Filme:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
+        <TextBox x:Name="txtFilme" HorizontalAlignment="Left" Height="23" Margin="80,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbPremio" Content="Premio:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Height="26" Width="54"/>
+        <TextBox x:Name="txtPremio" HorizontalAlignment="Left" Height="23" Margin="80,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbFilmeEncontrado" Content="Label" HorizontalAlignment="Left" Margin="80,38,0,0" VerticalAlignment="Top" Width="198" Height="29" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbPremioEncontrado" Content="Label" HorizontalAlignment="Left" Margin="80,90,0,0" VerticalAlignment="Top" Width="198" Height="29" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnCadastrarPremioFilme" Content="Cadastrar" Click="BtnCadastrarPremioFilme_Click" Grid.Column="1" HorizontalAlignment="Left" Margin="32,147,0,0" VerticalAlignment="Top" Width="76" Height="20"/>
+        <Button x:Name="btnBuscarFilme" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="142,15,0,0" VerticalAlignment="Top" Width="51" Height="21"/>
+        <Button x:Name="btnBuscarPremio" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="142,69,0,0" VerticalAlignment="Top" Width="51" Height="21"/>
+
+
+    </Grid>
+</Window>
