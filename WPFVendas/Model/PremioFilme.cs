@@ -23,5 +23,13 @@ namespace Locadora.Model
             CriadoEm = DateTime.Now;
             Status = true;
         }
+
+        public PremioFilme(Filme f, Premio p)
+        {
+            Filme = f;
+            Premio = p;
+            CriadoEm = DateTime.Now;
+            Status = true;
+        }
     }
 }

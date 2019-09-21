@@ -58,7 +58,6 @@ namespace Locadora.Views
 
             catch (Exception ex)
             {
-                MessageBox
                 MessageBox.Show(ex.Message) ;
             }
 

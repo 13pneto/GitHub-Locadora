@@ -90,6 +90,7 @@
     <Compile Include="DAL\PremioDAO.cs" />
     <Compile Include="DAL\PremioFilmeDAO.cs" />
     <Compile Include="DAL\ProdutoDAO.cs" />
+    <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="Migrations\201909170112471_RemovidoTableClienteEFuncionario.cs" />
     <Compile Include="Migrations\201909170112471_RemovidoTableClienteEFuncionario.Designer.cs">
       <DependentUpon>201909170112471_RemovidoTableClienteEFuncionario.cs</DependentUpon>

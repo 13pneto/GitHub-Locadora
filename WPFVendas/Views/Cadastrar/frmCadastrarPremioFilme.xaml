@@ -16,11 +16,12 @@
         <TextBox x:Name="txtFilme" HorizontalAlignment="Left" Height="23" Margin="80,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Grid.ColumnSpan="2"/>
         <Label x:Name="lbPremio" Content="Premio:" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Height="26" Width="54"/>
         <TextBox x:Name="txtPremio" HorizontalAlignment="Left" Height="23" Margin="80,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbFilmeEncontrado" Content="Label" HorizontalAlignment="Left" Margin="80,38,0,0" VerticalAlignment="Top" Width="198" Height="29" Grid.ColumnSpan="2"/>
-        <Label x:Name="lbPremioEncontrado" Content="Label" HorizontalAlignment="Left" Margin="80,90,0,0" VerticalAlignment="Top" Width="198" Height="29" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbFilmeEncontrado" Content="" HorizontalAlignment="Left" Margin="80,38,0,0" VerticalAlignment="Top" Width="198" Height="29" Grid.ColumnSpan="2"/>
+        <Label x:Name="lbPremioEncontrado"  Content="" HorizontalAlignment="Left" Margin="80,90,0,0" VerticalAlignment="Top" Width="198" Height="29" Grid.ColumnSpan="2"/>
         <Button x:Name="btnCadastrarPremioFilme" Content="Cadastrar" Click="BtnCadastrarPremioFilme_Click" Grid.Column="1" HorizontalAlignment="Left" Margin="32,147,0,0" VerticalAlignment="Top" Width="76" Height="20"/>
-        <Button x:Name="btnBuscarFilme" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="142,15,0,0" VerticalAlignment="Top" Width="51" Height="21"/>
-        <Button x:Name="btnBuscarPremio" Content="Buscar" Grid.Column="1" HorizontalAlignment="Left" Margin="142,69,0,0" VerticalAlignment="Top" Width="51" Height="21"/>
+        <Button x:Name="btnBuscarFilme" Content="Buscar" Click="BtnBuscarFilme_Click" Grid.Column="1" HorizontalAlignment="Left" Margin="142,15,0,0" VerticalAlignment="Top" Width="51" Height="21" />
+        <Button x:Name="btnBuscarPremio" Content="Buscar" Click="BtnBuscarPremio_Click"  Grid.Column="1" HorizontalAlignment="Left" Margin="142,69,0,0" VerticalAlignment="Top" Width="51" Height="21"/>
+        <Button x:Name="btnLimparFormulario" Click="BtnLimparFormulario_Click" Content="Limpar" Grid.Column="1" HorizontalAlignment="Left" Margin="142,112,0,0" VerticalAlignment="Top" Width="75"/>
 
 
     </Grid>

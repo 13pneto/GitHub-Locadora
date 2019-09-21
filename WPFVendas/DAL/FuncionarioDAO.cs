@@ -10,8 +10,6 @@ namespace Locadora.DAL
     class FuncionarioDAO
     {
         private static Context ctx = new Context();
-
-
         public static Funcionario BuscarFuncionarioPorCPF(Funcionario f)
         {
             return ctx.Funcionarios.FirstOrDefault
