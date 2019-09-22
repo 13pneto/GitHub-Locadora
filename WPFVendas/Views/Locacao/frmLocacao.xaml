@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Locadora.Views.Locacao"
         mc:Ignorable="d"
-        Title="frmLocacao" Height="450" Width="800">
+        Title="Locação" Height="603" Width="607">
     <Grid>
-        
+        <TextBox x:Name="txtCliente" HorizontalAlignment="Left" Height="22" Margin="280,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDtLocaco" HorizontalAlignment="Left" Height="22" Margin="280,362,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDtDevolucao" HorizontalAlignment="Left" Height="22" Margin="280,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="280,416,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtFuncionario" HorizontalAlignment="Left" Height="22" Margin="280,443,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        <Label x:Name="lbCliente" Content="Cliente" HorizontalAlignment="Left" Margin="177,335,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbDataLocacao" Content="Data locação" HorizontalAlignment="Left" Margin="177,361,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbDataDevolucao" Content="Data devolução" HorizontalAlignment="Left" Margin="177,389,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbValor" Content="Valor R$" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="177,417,0,0"/>
+        <Label x:Name="lbFuncionario" Content="Funcionario" HorizontalAlignment="Left" Margin="177,443,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="btnLocacao" Content="Efetuar" HorizontalAlignment="Left" Margin="255,491,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
