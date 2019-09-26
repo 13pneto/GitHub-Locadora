@@ -27,7 +27,20 @@ namespace Locadora.Model
         public Locacao()
         {
             CriadoEm = DateTime.Now;
+            Status = true;
         }
+
+        //public Locacao()
+        //{
+        //    CriadoEm = DateTime.Now;
+        //    Status = true;
+        //}
+
+        //public Locacao(List<ItemFilme> filmes)
+        //{
+        //    CriadoEm = DateTime.Now;
+        //    Status = true;
+        //}
 
     }
 }

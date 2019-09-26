@@ -36,5 +36,22 @@ namespace Locadora.Model
             Estoque = estoque;
         }
 
+        
+        public static bool verificaEstoque(Filme filme, int quantidade) // false = estoque insuficiente
+        {
+            if(filme.Estoque < quantidade)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void BaixarEstoque(ItemFilme iff) // false = estoque insuficiente
+        {
+            this.Estoque = iff.Filme.Estoque - iff.Quantidade;
+
+        }
+
+
     }
 }

@@ -10,5 +10,20 @@ namespace Locadora.DAL
     class LocacaoDAO
     {
         private static Context ctx = new Context();
+
+
+
+        public static bool CadastrarLocacao(Locacao l)
+        {
+            //if (BuscarFilmePorTitulo(f) == null)
+            //{
+
+                ctx.Locacao.Add(l);
+                ctx.SaveChanges();
+                return true;
+            //}
+            //return false;
+        }
+
     }
 }

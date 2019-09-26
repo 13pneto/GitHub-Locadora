@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Locadora.Views.Cadastrar;
+using Locadora.Views.Locacao;
 
 namespace Locadora.Views
 {
@@ -66,7 +67,8 @@ namespace Locadora.Views
 
         private void MenuItem_CadastrarLocacao_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmLocacao l = new frmLocacao();
+            l.ShowDialog();
         }
 
         private void MenuItem_ListarClientes_Click(object sender, RoutedEventArgs e)

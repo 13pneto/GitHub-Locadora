@@ -29,6 +29,5 @@ namespace Locadora.DAL
             }
             return false;
         }
-
     }
 }

@@ -31,7 +31,7 @@ namespace Locadora.Views
         {
             txtTituloFilme.Clear();
             txtSinopseFilme.Clear();
-            txtDtLançamentoFilme.Clear();
+            // DtLançamentoFilme.ClearValue();
             txtGeneroFilme.Clear();
             txtNacionalidade.Clear();
             txtEstoque.Clear();
@@ -49,7 +49,7 @@ namespace Locadora.Views
 
                 f.Titulo = txtTituloFilme.Text;
                 f.Sinopse = txtSinopseFilme.Text;
-                f.DataLancamento = Convert.ToDateTime(txtDtLançamentoFilme.Text);
+                f.DataLancamento = Convert.ToDateTime(DtLançamentoFilme.Text);
                 f.Genero = txtGeneroFilme.Text;
                 f.Nacionalidade = txtNacionalidade.Text;
                 f.Estoque = Convert.ToInt32(txtEstoque.Text);

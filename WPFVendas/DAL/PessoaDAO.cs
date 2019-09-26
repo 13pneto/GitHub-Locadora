@@ -13,11 +13,11 @@ namespace Locadora.DAL
         private static Context ctx = new Context();
 
 
-      //  public static Pessoa BuscarPessoaPorCPF(Pessoa p)
-      //  {
-       //     return ctx.Pessoas.FirstOrDefault
-     //           (x => x.Cpf.Equals(p.Cpf));
-     //   }
+        public static Pessoa BuscarPessoaPorCPF(Pessoa p)
+        {
+            return ctx.Pessoas.FirstOrDefault
+                (x => x.Nome.Equals(p.Nome));
+        }
 
         public static bool CadastrarPessoa(Pessoa p)
         {

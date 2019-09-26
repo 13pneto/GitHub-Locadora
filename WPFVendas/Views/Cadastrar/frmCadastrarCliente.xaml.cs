@@ -45,6 +45,7 @@ namespace Locadora.Views.Cadastrar
                 Cliente c = new Cliente();
                 c.Nome = txtNome.Text;
                 c.Cpf = txtCPF.Text;
+                ValidadorCPF.validaCpf(c.Cpf);
 
                 if (txtNome.Text.Equals("") || txtCPF.Text.Equals(""))
                 {

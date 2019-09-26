@@ -45,6 +45,8 @@ namespace Locadora.Views
                 Funcionario f = new Funcionario();
                 f.Nome = txtNomeFunc.Text;
                 f.Cpf = txtCPFFunc.Text;
+                ValidadorCPF.validaCpf(f.Cpf);
+
                 f.Salario = Convert.ToDouble(txtSalarioFunc.Text);
                 f.Comissao = Convert.ToDouble(txtComissaoFunc.Text);
 
