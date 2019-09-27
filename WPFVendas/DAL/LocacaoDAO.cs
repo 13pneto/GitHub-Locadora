@@ -18,11 +18,44 @@ namespace Locadora.DAL
             //if (BuscarFilmePorTitulo(f) == null)
             //{
 
-                ctx.Locacao.Add(l);
-                ctx.SaveChanges();
-                return true;
+            ctx.Locacao.Add(l);
+            ctx.SaveChanges();
+            return true;
             //}
             //return false;
+        }
+
+        public static Locacao BuscarLocacaoPorId(int idLocacao)
+        {
+            return ctx.Locacao.FirstOrDefault
+                (x => x.IdLocacao.Equals(idLocacao));
+        }
+
+        public static bool InativarLocacao(Locacao l)
+
+        {
+            Filme f = new Filme();
+
+            ctx.Locacao.FirstOrDefault
+             (x => x.IdLocacao.Equals(l.IdLocacao));
+
+            if (ctx.Locacao != null)
+            {
+                ctx.Locacao.Attach(l);
+                ctx.SaveChanges();
+
+                //Adiciona o estoque
+                foreach (ItemFilme iff in l.Filmes)
+                {
+                    f.AdicionarEstoque(iff);
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

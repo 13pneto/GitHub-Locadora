@@ -17,6 +17,7 @@
             </MenuItem>
             <MenuItem Header="_Locação" Height="35" Width="70">
                 <MenuItem Header="_Cadastrar Locação" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_CadastrarLocacao" Click="MenuItem_CadastrarLocacao_Click"/>
+                <MenuItem Header="_Devolução Locação" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_DevolucaoLocacao" Click="MenuItem_DevolucaoLocacao_Click"/>
             </MenuItem>
             <MenuItem Header="_Listar" Height="35" Width="60">
                 <MenuItem Header="_Listar Clientes" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarClientes" Click="MenuItem_ListarClientes_Click"/>

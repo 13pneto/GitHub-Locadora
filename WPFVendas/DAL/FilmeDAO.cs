@@ -25,6 +25,9 @@ namespace Locadora.DAL
                 f.Titulo.ToLower();
                 ctx.Filmes.Add(f);
                 ctx.SaveChanges();
+
+                //Adiciona o estoque nos filmes
+
                 return true;
             }
             return false;

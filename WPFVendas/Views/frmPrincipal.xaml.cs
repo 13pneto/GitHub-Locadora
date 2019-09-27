@@ -112,5 +112,11 @@ namespace Locadora.Views
         {
             //Preencher
         }
+
+        private void MenuItem_DevolucaoLocacao_Click(object sender, RoutedEventArgs e)
+        {
+            frmDevolucaoLocacao dl = new frmDevolucaoLocacao();
+            dl.ShowDialog();
+        }
     }
 }

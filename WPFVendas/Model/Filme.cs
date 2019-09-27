@@ -52,6 +52,11 @@ namespace Locadora.Model
 
         }
 
+        public void AdicionarEstoque(ItemFilme iff) // false = estoque insuficiente
+        {
+            this.Estoque = iff.Filme.Estoque + iff.Quantidade;
+        }
+
 
     }
 }
