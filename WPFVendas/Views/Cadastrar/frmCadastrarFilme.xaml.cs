@@ -66,6 +66,11 @@ namespace Locadora.Views
                     throw new Exception("Filme já cadastrado!");
                 }
 
+                if(Convert.ToInt32(txtEstoque.Text) < 0)
+                {
+                    throw new Exception("Não é possivel cadastrar filmes com estoque NEGATIVO!");
+                }
+
                 FilmeDAO.CadastrarFilme(f);
 
                 MessageBox.Show("Filme cadastrado!");

@@ -1,12 +1,24 @@
-namespace Locadora.Migrations
+﻿namespace Locadora.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RemovidoTableClienteEFuncionario : DbMigration
+    public partial class Inicial : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.TB_Pessoa",
+                c => new
+                    {
+                        IdPessoa = c.Int(nullable: false, identity: true),
+                        Nome = c.String(),
+                        Cpf = c.String(),
+                        Status = c.Boolean(nullable: false),
+                        CriadoEm = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.IdPessoa);
+            
             CreateTable(
                 "dbo.TB_Filme",
                 c => new
@@ -42,18 +54,6 @@ namespace Locadora.Migrations
                 .ForeignKey("dbo.TB_Funcionario", t => t.Funcionario_IdPessoa)
                 .Index(t => t.Cliente_IdPessoa)
                 .Index(t => t.Funcionario_IdPessoa);
-            
-            CreateTable(
-                "dbo.TB_Pessoa",
-                c => new
-                    {
-                        IdPessoa = c.Int(nullable: false, identity: true),
-                        Nome = c.String(),
-                        Cpf = c.String(),
-                        Status = c.Boolean(nullable: false),
-                        CriadoEm = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.IdPessoa);
             
             CreateTable(
                 "dbo.TB_ItemFilme",
@@ -157,9 +157,9 @@ namespace Locadora.Migrations
             DropTable("dbo.TB_PremioFilme");
             DropTable("dbo.TB_Premio");
             DropTable("dbo.TB_ItemFilme");
-            DropTable("dbo.TB_Pessoa");
             DropTable("dbo.TB_Locacao");
             DropTable("dbo.TB_Filme");
+            DropTable("dbo.TB_Pessoa");
         }
     }
 }

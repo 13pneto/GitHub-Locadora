@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,7 @@ namespace Locadora.DAL
 {
     class FilmeDAO
     {
-        private static Context ctx = new Context();
-
+        private static Context ctx = SingletonContext.GetInstance();
         public static Filme BuscarFilmePorTitulo(Filme f)
         {
             f.Titulo.ToLower();
@@ -32,5 +32,39 @@ namespace Locadora.DAL
             }
             return false;
         }
+
+        public static void BaixarEstoque(List<ItemFilme> listaFilmesLocacao)
+        {
+            foreach (ItemFilme iff in listaFilmesLocacao)
+            {
+                Filme f = iff.Filme;
+                f.BaixarEstoque(iff);
+                ctx.Entry(f).State = EntityState.Modified;
+            }
+        }
+
+        public static void AdicionarEstoque(List<ItemFilme> listaFilmesLocacao)
+        {
+            foreach (ItemFilme iff in listaFilmesLocacao)
+            {
+                Filme f = iff.Filme;
+                f.AdicionarEstoque(iff);
+                ctx.Entry(f).State = EntityState.Modified;
+            }
+        }
+
+        public static Filme VerificaInatividadeListaFilme(List<ItemFilme> listaFilmes)
+        {
+            foreach (ItemFilme iff in listaFilmes)
+            {
+                Filme f = iff.Filme;
+                if (f.Status == false)
+                {
+                    return f;
+                }
+            }
+            return null;
+        }
+
     }
 }

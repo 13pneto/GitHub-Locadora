@@ -16,20 +16,25 @@ namespace Locadora.Model
         public Filme Filme { get; set; }
         public Locacao Locacao { get; set; }
         public int Quantidade { get; set; }
+        public double Valor { get; set; }
 
         public ItemFilme() { }
 
-        public ItemFilme(Filme f, int qtd) {
+        public ItemFilme(Filme f, int qtd, double valor)
+        {
             this.Filme = f;
             this.Quantidade = qtd;
+            this.Valor = valor;
         }
 
-        public ItemFilme(Locacao l, Filme f, int qtd)
+        public ItemFilme(Locacao l, Filme f, int qtd, double valor)
         {
             this.Locacao = l;
             this.Filme = f;
             this.Quantidade = qtd;
-        }
-
+            this.Valor = valor;
+            
     }
+
+}
 }

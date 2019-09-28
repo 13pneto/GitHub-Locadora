@@ -53,6 +53,7 @@
         <TextBox x:Name="txtQuantidadeLocar" HorizontalAlignment="Left" Height="23" Margin="387,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
         <Label x:Name="lbTextoTotal" Content="Total R$: " HorizontalAlignment="Left" Margin="122,601,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbTotal" Content="" HorizontalAlignment="Left" Margin="182,601,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="100" Margin="292,450,0,0" VerticalAlignment="Top" Width="100"/>
 
 
 

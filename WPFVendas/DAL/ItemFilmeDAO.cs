@@ -9,6 +9,6 @@ namespace Locadora.DAL
 {
     class ItemFilmeDAO
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
     }
 }

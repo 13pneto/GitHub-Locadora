@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Locadora.DAL
 {
     class LocacaoDAO
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
 
 
 
@@ -27,35 +28,39 @@ namespace Locadora.DAL
 
         public static Locacao BuscarLocacaoPorId(int idLocacao)
         {
-            return ctx.Locacao.FirstOrDefault
-                (x => x.IdLocacao.Equals(idLocacao));
+            return ctx.Locacao.Include("Cliente").Include("Funcionario")
+                .Include("Filmes.Filme").FirstOrDefault
+               (x => x.IdLocacao.Equals(idLocacao));
         }
 
         public static bool InativarLocacao(Locacao l)
 
         {
-            Filme f = new Filme();
-
-            ctx.Locacao.FirstOrDefault
-             (x => x.IdLocacao.Equals(l.IdLocacao));
-
-            if (ctx.Locacao != null)
+            if (l != null)
             {
-                ctx.Locacao.Attach(l);
+                l.Status = false; //inativando locação
+                ctx.Entry(l).State = EntityState.Modified;
+
+                FilmeDAO.AdicionarEstoque(l.Filmes); //Voltar estoque dos produtos
+                FuncionarioDAO.
+                
                 ctx.SaveChanges();
-
-                //Adiciona o estoque
-                foreach (ItemFilme iff in l.Filmes)
-                {
-                    f.AdicionarEstoque(iff);
-                }
-
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        public static double CalcularMulta(Locacao l)
+        {
+            int diferencaData = l.DataDevolvida.Subtract(l.DataDevolucao).Days;
+            double valorMulta = 1.00;
+            double total = 0;
+
+            total = (valorMulta * diferencaData);
+            return total;
         }
 
     }

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Locadora.Model;
+using Locadora.DAL;
 
 namespace Locadora.DAL
 {
     class ClienteDAO
     {
-        private static Context ctx = new Context();
+        //private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
 
         public static Cliente BuscarClientePorCPF(Cliente c)
         {

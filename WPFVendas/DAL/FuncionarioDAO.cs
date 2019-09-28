@@ -9,11 +9,16 @@ namespace Locadora.DAL
 {
     class FuncionarioDAO
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
         public static Funcionario BuscarFuncionarioPorCPF(Funcionario f)
         {
             return ctx.Funcionarios.FirstOrDefault
                 (x => x.Cpf.Equals(f.Cpf));
+        }
+
+        public static double EfetivarComissao(Locacao l)
+        {
+           return double valorComissao = l.Valor * (l.Funcionario.Comissao / 100);
         }
     }
 }

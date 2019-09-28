@@ -9,7 +9,7 @@ namespace Locadora.DAL
 {
     class PremioFilmeDAO
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
         public static PremioFilme BuscarPremioFilme(PremioFilme pf)
         {
             //PremioFilme pfTemp = new PremioFilme();

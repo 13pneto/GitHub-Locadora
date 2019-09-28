@@ -9,7 +9,7 @@ namespace Locadora.DAL
 {
     class ProdutoDAO
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
         public static Produto BuscarProdutoPorNome(Produto p)
         {
             return ctx.Produtos.FirstOrDefault

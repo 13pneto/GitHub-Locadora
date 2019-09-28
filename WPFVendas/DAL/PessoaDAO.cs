@@ -10,7 +10,7 @@ namespace Locadora.DAL
 {
     class PessoaDAO
     {
-        private static Context ctx = new Context();
+        private static Context ctx = SingletonContext.GetInstance();
 
 
         public static Pessoa BuscarPessoaPorCPF(Pessoa p)
@@ -23,7 +23,7 @@ namespace Locadora.DAL
         {
             //if (BuscarPessoaPorCPF(p) == null)
             //{
-                ctx.Pessoas.Add(p);
+            ctx.Pessoas.Add(p);
                 ctx.SaveChanges();
                 return true;
            // }

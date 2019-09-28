@@ -41,6 +41,20 @@ namespace Locadora.Views.Locacao
 
         }
 
+        private void LimparFormulario()
+        {
+            txtCliente.Clear();
+            txtClienteNome.Clear();
+            txtFilmeProcurar.Clear();
+            txtFuncionario.Clear();
+            txtFuncionarioNome.Clear();
+            txtQuantidadeLocar.Clear();
+            txtValor.Clear();
+
+            txtCliente.Focus();
+
+        }
+
         private void BtnBuscarFilme_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -52,19 +66,15 @@ namespace Locadora.Views.Locacao
                 {
                     MessageBox.Show("Filme NÃO encontrado!");
                 }
+
+                if (f.Status == false)
+                {
+                    throw new Exception("O Filme está inativo! \nNão será possível locar este filme.");
+                }
+
                 btnAdicionar.IsEnabled = true; //ativa botao adicionar
                 MessageBox.Show("Filme ENCONTRADO!");
 
-                //dynamic filmeDyn = new
-                //{
-                //    Id = f.IdFilme,
-                //    Filme = f.Titulo,
-                //    Genero = f.Genero,
-                //    Estoque = f.Estoque.ToString()
-                //};
-                //produtosGrid.Add(filmeDyn);
-                //dtaFilmesLocar.ItemsSource = produtosGrid;
-                //dtaFilmesLocar.Items.Refresh();
             }
 
             catch (Exception ex)
@@ -181,6 +191,7 @@ namespace Locadora.Views.Locacao
 
                 lbTotal.Content = (total);
                 ItemFilme iff = new ItemFilme();
+                iff.Valor = Convert.ToDouble(txtValor.Text);
                 iff.Filme = f;
 
                 if (filmesAdicionados.Count <= 0) { filmesAdicionados.Add(iff); f = new Filme(); }
@@ -218,30 +229,49 @@ namespace Locadora.Views.Locacao
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                total = 0;
             }
         }
 
         private void BtnLocar_Click(object sender, RoutedEventArgs e)
         {
-            ItemFilme iff = new ItemFilme();
-
-
-            //BAIXAR ESTOQUE PRODUTOS
-            foreach (ItemFilme x in filmesAdicionados)
+            try
             {
-                f.BaixarEstoque(x);
-                //x.Locacao = l;
+                ItemFilme iff = new ItemFilme();
+
+                //BAIXAR ESTOQUE PRODUTOS
+                FilmeDAO.BaixarEstoque(filmesAdicionados);
+
+                l.Cliente = c;
+                l.DataLocacao = dtLocacao.SelectedDate.Value;
+                l.DataDevolucao = dtDevolucao.SelectedDate.Value;
+                l.Filmes = filmesAdicionados;
+                l.Funcionario = func;
+                l.DataDevolvida = dtDevolucao.SelectedDate.Value;
+                l.Valor = Convert.ToDouble(lbTotal.Content);
+
+                if (l.Cliente.Status == false)
+                {
+                    throw new Exception("O Cliente está inativo. \nNão é possivel realizar a locação.");
+                }
+                if (l.Funcionario.Status == false)
+                {
+                    throw new Exception("O funcionário está inativo. \nNão é possivel realizar a locação.");
+                }
+
+                double comissaoFuncionario = FuncionarioDAO.EfetivarComissao(l); //Retorna o valor da comissão daquela venda
+
+                LocacaoDAO.CadastrarLocacao(l);
+                MessageBox.Show("Locação realizada!");
+
+                LimparFormulario();
             }
 
-            l.Cliente = c;
-            l.DataLocacao = dtLocacao.SelectedDate.Value;
-            l.DataDevolucao = dtDevolucao.SelectedDate.Value;
-            l.Filmes = filmesAdicionados;
-            l.Funcionario = func;
-            l.DataDevolvida = dtDevolucao.SelectedDate.Value;
-            l.Valor = Convert.ToDouble(lbTotal.Content);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            LocacaoDAO.CadastrarLocacao(l);
         }
     }
 }
