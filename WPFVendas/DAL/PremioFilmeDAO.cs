@@ -38,5 +38,21 @@ namespace Locadora.DAL
            // }
             //return false;
         }
+
+
+        public static bool DuplicidadePremioFilme(PremioFilme pesquisarPF)
+        {
+           List<PremioFilme> pf = ctx.PremioFilme.Include("Filme").Include("Premio").ToList();
+            
+            foreach(PremioFilme x in pf)
+            {
+                if(x.Filme.Titulo == pesquisarPF.Filme.Titulo && x.Premio.Descricao == pesquisarPF.Premio.Descricao)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

@@ -47,11 +47,10 @@ namespace Locadora.Views
 
             lbFilmeEncontrado.Content = "";
             lbPremioEncontrado.Content = "";
-
-
-
-
             txtFilme.Focus();
+
+            f = new Filme();
+            p = new Premio();
         }
 
         private void BtnCadastrarPremioFilme_Click(object sender, RoutedEventArgs e) //Cadastrar Premio no Filme
@@ -59,13 +58,16 @@ namespace Locadora.Views
             try
             {
                 PremioFilme pf = new PremioFilme(f, p);
-                //if (PremioFilmeDAO.BuscarPremioFilme(pf) != null)
-                //{
-                //    throw new Exception("Este filme já possui este prêmio cadastrado!");
-                //}
+
+                if (!(PremioFilmeDAO.DuplicidadePremioFilme(pf)))
+                {
+                    throw new Exception("Este premio já está cadastrado neste filme.");
+                }
+
                 PremioFilmeDAO.CadastrarPremioFilme(pf);
                 MessageBox.Show("Premio '" + pf.Premio.Descricao + "' cadastrado no Filme '" + pf.Filme.Titulo + "' !");
                 btnCadastrarPremioFilme.IsEnabled = false; //Não deixa clicar em cadastrar novamente
+                LimparFormulario();
             }
             catch (Exception ex)
             {
