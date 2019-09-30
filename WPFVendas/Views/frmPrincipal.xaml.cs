@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Locadora.Views.Cadastrar;
 using Locadora.Views.Locacao;
+using Locadora.Views.Excluir;
+using Locadora.Views.Editar;
 
 namespace Locadora.Views
 {
@@ -110,13 +112,20 @@ namespace Locadora.Views
 
         private void MenuItem_ExcluirFilme_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmExcluirFilme ef = new frmExcluirFilme();
+            ef.ShowDialog();
         }
 
         private void MenuItem_DevolucaoLocacao_Click(object sender, RoutedEventArgs e)
         {
             frmDevolucaoLocacao dl = new frmDevolucaoLocacao();
             dl.ShowDialog();
+        }
+
+        private void MenuItem_EditarFilme_Click(object sender, RoutedEventArgs e)
+        {
+            frmEditarFilme ef = new frmEditarFilme();
+            ef.ShowDialog();
         }
     }
 }

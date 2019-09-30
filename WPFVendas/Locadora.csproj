@@ -85,6 +85,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DAL\ClienteDAO.cs" />
+    <Compile Include="DAL\ComissaoDAO.cs" />
     <Compile Include="DAL\FilmeDAO.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
     <Compile Include="DAL\ItemFilmeDAO.cs" />
@@ -102,8 +103,13 @@
     <Compile Include="Migrations\201909272312396_TBItemFilmeAddValor.designer.cs">
       <DependentUpon>201909272312396_TBItemFilmeAddValor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909300311325_AddTableComissao.cs" />
+    <Compile Include="Migrations\201909300311325_AddTableComissao.designer.cs">
+      <DependentUpon>201909300311325_AddTableComissao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Comissao.cs" />
     <Compile Include="Model\Context.cs" />
     <Compile Include="Model\Filme.cs" />
     <Compile Include="Model\Funcionario.cs" />
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="Views\Cadastrar\frmCadastrarPremioFilme.xaml.cs">
       <DependentUpon>frmCadastrarPremioFilme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editar\frmEditarFilme.xaml.cs">
+      <DependentUpon>frmEditarFilme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Excluir\frmExcluirFilme.xaml.cs">
+      <DependentUpon>frmExcluirFilme.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\frmPrincipal.xaml.cs">
       <DependentUpon>frmPrincipal.xaml</DependentUpon>
@@ -172,6 +184,9 @@
     <EmbeddedResource Include="Migrations\201909272312396_TBItemFilmeAddValor.resx">
       <DependentUpon>201909272312396_TBItemFilmeAddValor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909300311325_AddTableComissao.resx">
+      <DependentUpon>201909300311325_AddTableComissao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -203,6 +218,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Cadastrar\frmCadastrarPremioFilme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editar\frmEditarFilme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Excluir\frmExcluirFilme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

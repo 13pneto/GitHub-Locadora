@@ -60,6 +60,13 @@ namespace Locadora.Views
                     throw new Exception("Funcionario já cadastrado!");
                 }
 
+                if(f.Comissao > 10)
+                {
+                    throw new Exception("A comissão é de no máximo 10%.\nFavor corrigir.");
+                    txtComissaoFunc.Text = "";
+                    txtComissaoFunc.Focus();
+                }
+
                 ValidadorCPF.validaCpf(f.Cpf);
 
                 PessoaDAO.CadastrarPessoa(f);

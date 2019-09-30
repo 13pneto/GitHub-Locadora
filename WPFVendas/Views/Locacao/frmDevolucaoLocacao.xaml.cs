@@ -38,6 +38,7 @@ namespace Locadora.Views.Locacao
             txtDataDevolucao.Text = "";
             txtDtLocacao.Clear();
             txtIdLocacao.Clear();
+            dtFilmesLocados.Items.Clear();
 
             btnBuscarLocacao.IsEnabled = true;
             btnDevolucao.IsEnabled = true;
@@ -75,6 +76,7 @@ namespace Locadora.Views.Locacao
                     throw new Exception("Não foi possivel realizar a devolução. \nEntre em contato com o desenvolvedor");
                 }
 
+                //LocacaoDAO.InativarLocacao(l);
                 MessageBox.Show("Devolução realizada com sucesso!");
                 LimparFormulario();
             }

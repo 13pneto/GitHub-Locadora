@@ -32,6 +32,7 @@
             </MenuItem>
             <MenuItem Header="_Excluir/Editar" Height="35" Width="96">
                 <MenuItem Header="Excluir Filme" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ExcluirFilme" Click="MenuItem_ExcluirFilme_Click" />
+                <MenuItem Header="Editar Filme" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_EditarFilme" Click="MenuItem_EditarFilme_Click" />
             </MenuItem>
         </Menu>
 

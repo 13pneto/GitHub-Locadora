@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Locadora.Model;
+using WPFVendas.DAL;
 
 namespace Locadora.DAL
 {
@@ -42,7 +43,8 @@ namespace Locadora.DAL
                 ctx.Entry(l).State = EntityState.Modified;
 
                 FilmeDAO.AdicionarEstoque(l.Filmes); //Voltar estoque dos produtos
-                FuncionarioDAO.
+                Comissao c = new Comissao(l);
+                ComissaoDAO.CadastrarComissao(c);
                 
                 ctx.SaveChanges();
                 return true;

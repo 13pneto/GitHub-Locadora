@@ -18,7 +18,8 @@ namespace Locadora.DAL
 
         public static double EfetivarComissao(Locacao l)
         {
-           return double valorComissao = l.Valor * (l.Funcionario.Comissao / 100);
+            double valorComissao = l.Valor * (l.Funcionario.Comissao / 100);
+            return valorComissao;
         }
     }
 }

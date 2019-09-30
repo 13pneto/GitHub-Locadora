@@ -65,6 +65,18 @@ namespace Locadora.DAL
             }
             return null;
         }
+        public static bool ExcluirFilme(Filme f)
+        {
+            ctx.Filmes.Remove(f);
+            ctx.SaveChanges();
+            return true;
+        }
 
+        public static bool AtualizarFilme(Filme f)
+        {
+            ctx.Entry(f).State = EntityState.Modified;
+            ctx.SaveChanges();
+            return true;
+        }
     }
 }
