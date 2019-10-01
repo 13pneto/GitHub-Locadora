@@ -19,16 +19,28 @@ namespace Locadora.DAL
                 (x => x.Cpf.Equals(c.Cpf));
         }
 
-    //    public static bool CadastrarCliente(Cliente c)
-    //    {
-    //        if (BuscarClientePorCPF(c) == null)
-    //        {
-    //            ctx.Clientes.Add(c);
-    //            ctx.SaveChanges();
-    //            return true;
-    //        }
-    //        return false;
-    //    }
+        //    public static bool CadastrarCliente(Cliente c)
+        //    {
+        //        if (BuscarClientePorCPF(c) == null)
+        //        {
+        //            ctx.Clientes.Add(c);
+        //            ctx.SaveChanges();
+        //            return true;
+        //        }
+        //        return false;
+        //    }
+
+        public static List<Cliente> ListaClientesAtivos()
+        {
+            return ctx.Clientes.Where(x => x.Status == true).ToList();
+        }
+
+        public static List<Cliente> ListaClientesInativos()
+        {
+            return ctx.Clientes.Where(x => x.Status == false).ToList();
+        }
+
+
 
     }
 

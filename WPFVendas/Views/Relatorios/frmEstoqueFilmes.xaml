@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Locadora.Views.Relatorios"
         mc:Ignorable="d"
-        Title="frmEstoqueFilmes" Height="450" Width="800">
+        Title="Filmes x Estoque" Height="450" Width="543.299">
     <Grid>
-        
+        <GroupBox x:Name="groupBox" Header="Estoque Filmes" HorizontalAlignment="Left" Height="316" Margin="58,55,0,0" VerticalAlignment="Top" Width="401">
+            <DataGrid x:Name="dtFilmesXEstoque" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="214" Margin="47,46,0,0" VerticalAlignment="Top" Width="303">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Filme}" Header="Filme" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding Estoque}" Header="Estoque" Width="70"/>
+                    <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="90"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
     </Grid>
 </Window>

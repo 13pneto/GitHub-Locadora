@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Locadora.DAL;
+using Locadora.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,28 @@ namespace Locadora.Views.Relatorios
     /// </summary>
     public partial class frmEstoqueFilmes : Window
     {
+        List<Filme> filmes = FilmeDAO.ListarFilmes();
+        private List<dynamic> produtosGrid = new List<dynamic>();
+
         public frmEstoqueFilmes()
         {
             InitializeComponent();
+            String status;
+
+            foreach (Filme x in filmes)
+            {
+                status = x.Status == true ? "Ativo" : "Inativo";
+                dynamic filmeDyn = new
+                {
+                    Filme = x.Titulo,
+                    Estoque = Convert.ToInt32(x.Estoque),
+                    Status = status,
+                };
+                //Preencher GRID
+                produtosGrid.Add(filmeDyn);
+                dtFilmesXEstoque.ItemsSource = produtosGrid;
+                dtFilmesXEstoque.Items.Refresh();
+            }
         }
     }
 }

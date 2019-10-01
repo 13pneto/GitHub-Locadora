@@ -1,0 +1,25 @@
+﻿<Window x:Class="Locadora.Views.Listar.frmListarFuncionarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Locadora.Views.Listar"
+        mc:Ignorable="d"
+        Title="Listar Funcionarios" Height="576.804" Width="1008.763">
+    <Grid>
+        <Grid Margin="0,0,-92,-154">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="433*"/>
+                <ColumnDefinition Width="443*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox x:Name="groupBox" Header="Clientes Ativos" HorizontalAlignment="Left" Height="335" Margin="48,73,0,0" VerticalAlignment="Top" Width="361" Grid.Column="1">
+                <DataGrid x:Name="dtFuncionariosAtivos" HorizontalAlignment="Left" Height="256" Margin="10,42,0,0" VerticalAlignment="Top" Width="326"/>
+            </GroupBox>
+            <GroupBox x:Name="groupBox1" Grid.Column="2" Header="Clientes Inativos" HorizontalAlignment="Left" Height="335" Margin="10,73,0,0" VerticalAlignment="Top" Width="363">
+                <DataGrid x:Name="dtFUncionariosInativos" HorizontalAlignment="Left" Height="263" Margin="10,35,-2,0" VerticalAlignment="Top" Width="343"/>
+            </GroupBox>
+        </Grid>
+
+    </Grid>
+</Window>

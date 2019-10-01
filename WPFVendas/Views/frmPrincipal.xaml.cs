@@ -15,6 +15,8 @@ using Locadora.Views.Cadastrar;
 using Locadora.Views.Locacao;
 using Locadora.Views.Excluir;
 using Locadora.Views.Editar;
+using Locadora.Views.Listar;
+using Locadora.Views.Relatorios;
 
 namespace Locadora.Views
 {
@@ -30,7 +32,7 @@ namespace Locadora.Views
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(MessageBox.Show("Deseja realmente fechar a janela?",
+            if (MessageBox.Show("Deseja realmente fechar a janela?",
                 "WPF Vendas", MessageBoxButton.YesNo,
                 MessageBoxImage.Question) == MessageBoxResult.No)
             {
@@ -75,34 +77,39 @@ namespace Locadora.Views
 
         private void MenuItem_ListarClientes_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmListarClientes lc = new frmListarClientes();
+            lc.ShowDialog();
         }
 
         private void MenuItem_ListarFilmes_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmListarFilmes lf = new frmListarFilmes();
+            lf.ShowDialog();
         }
 
         private void MenuItem_ListarFuncionarios_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmListarFuncionarios lf = new frmListarFuncionarios();
+            lf.ShowDialog();
         }
 
         private void MenuItem_ListarPremios_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmListarPremios lp = new frmListarPremios();
+            lp.ShowDialog();
         }
 
         private void MenuItem_FilmesXQtdEstoque_Click(object sender, RoutedEventArgs e)
         {
-            //Preencher
+            frmEstoqueFilmes ef = new frmEstoqueFilmes();
+            ef.ShowDialog();
         }
 
         private void MenuItem_HistoricoLocacaoXFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            frmHistoricoLocacaoXFuncionario f = new frmHistoricoLocacaoXFuncionario();
-            f.lbHistoricoLocacaoXFuncionario.Content = "Teste1\nTeste2";
-            f.ShowDialog();
+            //frmHistoricoLocacaoXFuncionario f = new frmHistoricoLocacaoXFuncionario();
+            //f.lbHistoricoLocacaoXFuncionario.Content = "Teste1\nTeste2";
+            //f.ShowDialog();
         }
 
         private void MenuItem_HistoricoLocacaoXFilme_Click(object sender, RoutedEventArgs e)
@@ -126,6 +133,23 @@ namespace Locadora.Views
         {
             frmEditarFilme ef = new frmEditarFilme();
             ef.ShowDialog();
+        }
+
+        private void MenuItem_HistoricoLocacaoXCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuItem_ListarLocacoes_Click(object sender, RoutedEventArgs e)
+        {
+            frmListarLocacoes ll = new frmListarLocacoes();
+            ll.ShowDialog();
+        }
+
+        private void MenuItem_HistoricoLocacaoXCliente_Click_1(object sender, RoutedEventArgs e)
+        {
+            frmHistoricoLocacaoXCliente hlc = new frmHistoricoLocacaoXCliente();
+            hlc.ShowDialog();
         }
     }
 }

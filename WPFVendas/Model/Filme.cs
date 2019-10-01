@@ -57,6 +57,10 @@ namespace Locadora.Model
             this.Estoque = iff.Filme.Estoque + iff.Quantidade;
         }
 
+        public override string ToString()
+        {
+            return this.Titulo;
+        }
 
     }
 }

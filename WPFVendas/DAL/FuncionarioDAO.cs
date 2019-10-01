@@ -21,5 +21,15 @@ namespace Locadora.DAL
             double valorComissao = l.Valor * (l.Funcionario.Comissao / 100);
             return valorComissao;
         }
+
+        public static List<Funcionario> ListFuncionariosAtivos()
+        {
+            return ctx.Funcionarios.Where(x => x.Status == true).ToList();
+        }
+
+        public static List<Funcionario> ListaFuncionariosInativos()
+        {
+            return ctx.Funcionarios.Where(x => x.Status == false).ToList();
+        }
     }
 }

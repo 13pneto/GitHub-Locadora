@@ -20,13 +20,14 @@
                 <MenuItem Header="_Devolução Locação" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_DevolucaoLocacao" Click="MenuItem_DevolucaoLocacao_Click"/>
             </MenuItem>
             <MenuItem Header="_Listar" Height="35" Width="60">
+                <MenuItem Header="_Listar Locações" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarLocacoes" Click="MenuItem_ListarLocacoes_Click"/>
                 <MenuItem Header="_Listar Clientes" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarClientes" Click="MenuItem_ListarClientes_Click"/>
                 <MenuItem Header="_Listar Filmes" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarFilmes" Click="MenuItem_ListarFilmes_Click"/>
                 <MenuItem Header="_Listar Funcionarios" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarFuncionarios" Click="MenuItem_ListarFuncionarios_Click"/>
                 <MenuItem Header="_Listar Premios" HorizontalAlignment="Left" Height="35" Width="200" Name="MenuItem_ListarPremios" Click="MenuItem_ListarPremios_Click" />
             </MenuItem>
             <MenuItem Header="_Relatórios" Height="35" Width="75">
-                <MenuItem Header="_Historico Locações x Filme" HorizontalAlignment="Left" Height="35" Width="260" Name="MenuItem_HistoricoLocacaoXFilme" Click="MenuItem_HistoricoLocacaoXFilme_Click"/>
+                <MenuItem Header="_Historico Locações x Cliente" HorizontalAlignment="Left" Height="35" Width="260" Name="MenuItem_HistoricoLocacaoXCliente" Click="MenuItem_HistoricoLocacaoXCliente_Click_1"/>
                 <MenuItem Header="_Historico Locações x Funcionário" HorizontalAlignment="Left" Height="35" Width="260" Name="MenuItem_HistoricoLocacaoXFuncionario" Click="MenuItem_HistoricoLocacaoXFuncionario_Click"/>
                 <MenuItem Header="_Filmes x Qtd. Estoque" HorizontalAlignment="Left" Height="35" Width="260"  Name="MenuItem_FilmesXQtdEstoque" Click="MenuItem_FilmesXQtdEstoque_Click"/>
             </MenuItem>

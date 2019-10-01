@@ -1,12 +1,26 @@
-﻿<Window x:Class="Locadora.Views.frmHistoricoLocacaoXCliente"
+﻿<Window x:Class="Locadora.Views.Relatorios.frmHistoricoLocacaoXCliente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Locadora.Views.Relatorios"
         mc:Ignorable="d"
-        Title="frmHistoricoLocacaoXCliente" Height="450" Width="800">
+        Title="Locação x Cliente" Height="734.536" Width="800">
     <Grid>
-        
+        <GroupBox x:Name="groupBox" Header="Locações x Cliente" HorizontalAlignment="Left" Height="340" Margin="56,144,0,0" VerticalAlignment="Top" Width="698">
+            <DataGrid x:Name="dtLocacaoXCliente" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="235" Margin="32,55,0,0" VerticalAlignment="Top" Width="621" RenderTransformOrigin="-0.136,0.275">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Cliente}" Header="Filme" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding Locacao_ID}" Header="Estoque" Width="70"/>
+                    <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="90"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <Label x:Name="label" Content="CPF Cliente: " HorizontalAlignment="Left" Margin="80,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtClienteBuscar" HorizontalAlignment="Left" Height="23" Margin="182,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnBuscarCliente" Click="BtnBuscarCliente_Click" Content="Buscar" HorizontalAlignment="Left" Margin="367,64,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="lbClienteEncontrado" Content="" HorizontalAlignment="Left" Margin="182,93,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

@@ -36,5 +36,10 @@ namespace Locadora.Model
             
     }
 
-}
+        public override string ToString()
+        {
+            return this.Filme.Titulo;
+        }
+
+    }
 }

@@ -18,5 +18,6 @@ namespace Locadora.Model
             Salario = salario;
             Comissao = comissao;
         }
+
     }
 }

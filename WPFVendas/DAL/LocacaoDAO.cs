@@ -45,7 +45,7 @@ namespace Locadora.DAL
                 FilmeDAO.AdicionarEstoque(l.Filmes); //Voltar estoque dos produtos
                 Comissao c = new Comissao(l);
                 ComissaoDAO.CadastrarComissao(c);
-                
+
                 ctx.SaveChanges();
                 return true;
             }
@@ -64,6 +64,17 @@ namespace Locadora.DAL
             total = (valorMulta * diferencaData);
             return total;
         }
+
+        public static List<Locacao> ListarLocacoesAtivas()
+        {
+            return ctx.Locacao.Include("Funcionario").Include("Cliente").Include("Filmes.Filme").Where(x => x.Status == true).ToList();
+        }
+
+        public static List<Locacao> ListarLocacoesDevolvidas()
+        {
+            return ctx.Locacao.Include("Funcionario").Include("Cliente").Where(x => x.Status == false).ToList();
+        }
+
 
     }
 }

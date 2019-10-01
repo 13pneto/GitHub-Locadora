@@ -78,5 +78,20 @@ namespace Locadora.DAL
             ctx.SaveChanges();
             return true;
         }
+
+        public static List<Filme> ListarFilmesAtivos()
+        {
+            return ctx.Filmes.Where(x => x.Status == true).ToList();
+        }
+
+        public static List<Filme> ListarFilmesInativos()
+        {
+            return ctx.Filmes.Where(x => x.Status == false).ToList();
+        }
+
+        public static List<Filme> ListarFilmes()
+        {
+            return ctx.Filmes.ToList();
+        }
     }
 }

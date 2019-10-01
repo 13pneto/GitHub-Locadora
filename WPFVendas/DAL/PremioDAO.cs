@@ -28,5 +28,11 @@ namespace Locadora.DAL
             }
             return false;
         }
+
+        public static List<Premio> ListarPremios()
+        {
+            return ctx.Premio.ToList();
+        }
+
     }
 }

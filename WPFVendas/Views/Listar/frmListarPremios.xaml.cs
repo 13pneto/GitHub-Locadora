@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Locadora.DAL;
+using Locadora.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +14,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Locadora.Views
+namespace Locadora.Views.Listar
 {
     /// <summary>
-    /// Lógica interna para frmFilmesCadastrados.xaml
+    /// Lógica interna para frmListarPremios.xaml
     /// </summary>
-    public partial class frmFilmesCadastrados : Window
+    public partial class frmListarPremios : Window
     {
-        public frmFilmesCadastrados()
+        List<Premio> ListaPremios = PremioDAO.ListarPremios();
+
+        public frmListarPremios()
         {
             InitializeComponent();
+
+            dtPremios.ItemsSource = ListaPremios;
         }
     }
 }

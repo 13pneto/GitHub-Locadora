@@ -81,7 +81,7 @@ namespace Locadora.Views.Editar
                 if (cbStatusNew.SelectedIndex == 0)
                 {
                     f.Status = true;
-                }
+                }   
                 else
                 {
                     f.Status = false;

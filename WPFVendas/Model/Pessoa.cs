@@ -33,5 +33,10 @@ namespace Locadora.Model
             this.Status = status;
         }
 
+        public override string ToString()
+        {
+            return this.Nome;
+        }
+
     }
 }

@@ -42,5 +42,12 @@ namespace Locadora.Model
         //    Status = true;
         //}
 
+
+        //public override string ToString()
+        //{
+        //    return Cliente.Nome;
+        //}
+
+
     }
 }

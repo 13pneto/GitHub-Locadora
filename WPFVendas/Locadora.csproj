@@ -145,6 +145,21 @@
     <Compile Include="Views\frmPrincipal.xaml.cs">
       <DependentUpon>frmPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Listar\frmListarClientes.xaml.cs">
+      <DependentUpon>frmListarClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Listar\frmListarFilmes.xaml.cs">
+      <DependentUpon>frmListarFilmes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Listar\frmListarFuncionarios.xaml.cs">
+      <DependentUpon>frmListarFuncionarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Listar\frmListarLocacoes.xaml.cs">
+      <DependentUpon>frmListarLocacoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Listar\frmListarPremios.xaml.cs">
+      <DependentUpon>frmListarPremios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Locacao\frmDevolucaoLocacao.xaml.cs">
       <DependentUpon>frmDevolucaoLocacao.xaml</DependentUpon>
     </Compile>
@@ -153,9 +168,6 @@
     </Compile>
     <Compile Include="Views\Relatorios\frmEstoqueFilmes.xaml.cs">
       <DependentUpon>frmEstoqueFilmes.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Relatorios\frmFilmesCadastrados.xaml.cs">
-      <DependentUpon>frmFilmesCadastrados.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Relatorios\frmHistoricoLocacaoXCliente.xaml.cs">
       <DependentUpon>frmHistoricoLocacaoXCliente.xaml</DependentUpon>
@@ -233,6 +245,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Listar\frmListarClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Listar\frmListarFilmes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Listar\frmListarFuncionarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Listar\frmListarLocacoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Listar\frmListarPremios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Locacao\frmDevolucaoLocacao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,10 +277,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Relatorios\frmFilmesCadastrados.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Relatorios\frmHistoricoLocacaoXCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -258,9 +286,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Listar\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
       <Visible>False</Visible>
