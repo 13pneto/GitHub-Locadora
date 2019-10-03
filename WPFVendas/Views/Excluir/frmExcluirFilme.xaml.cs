@@ -46,6 +46,10 @@ namespace Locadora.Views.Excluir
                 {
                     throw new Exception("Filme não encontrado!");
                 }
+                if(f.Status == false)
+                {
+                   throw new Exception("Este filme já se encontra na lista de exclusões.\n Para reativa-lo vá na opção de Editar e altere o status para 'ATIVO'");
+                }
 
                 FilmeDAO.ExcluirFilme(f);
                 MessageBox.Show("Filme excluido com sucesso.");

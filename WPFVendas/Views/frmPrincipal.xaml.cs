@@ -107,9 +107,8 @@ namespace Locadora.Views
 
         private void MenuItem_HistoricoLocacaoXFuncionario_Click(object sender, RoutedEventArgs e)
         {
-            //frmHistoricoLocacaoXFuncionario f = new frmHistoricoLocacaoXFuncionario();
-            //f.lbHistoricoLocacaoXFuncionario.Content = "Teste1\nTeste2";
-            //f.ShowDialog();
+            frmHistoricoLocacaoXFuncionario hlf = new frmHistoricoLocacaoXFuncionario();
+            hlf.ShowDialog();
         }
 
         private void MenuItem_HistoricoLocacaoXFilme_Click(object sender, RoutedEventArgs e)

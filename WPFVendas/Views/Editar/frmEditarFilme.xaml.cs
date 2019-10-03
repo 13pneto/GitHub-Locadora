@@ -89,12 +89,11 @@ namespace Locadora.Views.Editar
 
                 Filme temp = new Filme();   //  Cria um filme temporario apenas para verificar duplicidade entre a alteração x banco
                 temp.Titulo = f.Titulo;
-                if (FilmeDAO.BuscarFilmePorTitulo(temp) != null)
+
+                
+                if (FilmeDAO.BuscarFilmePorTitulo(temp) != null && f.Titulo != txtTituloFilmeBuscar.Text) //verifica se ja existe no banco ||| E verifica se o titulo for igual, se é o mesmo objeto.
                 {
                     throw new Exception("Este filme já existe, não é possivel prosseguir com a alteração. \nFavor corrigir o titulo.");
-                }
-                {
-
                 }
 
                 if (!(FilmeDAO.AtualizarFilme(f)))

@@ -57,6 +57,7 @@ namespace Locadora.Views.Locacao
 
         private void BtnBuscarFilme_Click(object sender, RoutedEventArgs e)
         {
+            f = new Filme();
             try
             {
                 f.Titulo = txtFilmeProcurar.Text;
@@ -74,7 +75,7 @@ namespace Locadora.Views.Locacao
 
                 btnAdicionar.IsEnabled = true; //ativa botao adicionar
                 MessageBox.Show("Filme ENCONTRADO!");
-
+                lbFilmeSelecionado.Content = f.Titulo + "\nEstoque: " + f.Estoque.ToString();
             }
 
             catch (Exception ex)

@@ -8,7 +8,18 @@
         Title="Listar Locações" Height="450" Width="800">
     <Grid>
         <GroupBox x:Name="groupBox" Header="Lista de Locações" HorizontalAlignment="Left" Height="321" Margin="48,56,0,0" VerticalAlignment="Top" Width="680">
-            <DataGrid x:Name="dtLocacoes" HorizontalAlignment="Left" Height="248" Margin="10,27,0,0" VerticalAlignment="Top" Width="644"/>
+            <DataGrid x:Name="dtLocacoes" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="248" Margin="10,27,0,0" VerticalAlignment="Top" Width="644">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Header="Filme"/>
+                    <DataGridTextColumn Binding="{Binding Cliente}" Header="Cliente"/>
+                    <DataGridTextColumn Binding="{Binding Funcionario}" Header="Funcionario"/>
+                    <DataGridTextColumn Binding="{Binding DataLocacao}" Header="Valor"/>
+                    <DataGridTextColumn Binding="{Binding DataDevolucao}" Header="Status"/>
+                    <DataGridTextColumn Binding="{Binding DataDevolvida}" Header="Funcionario"/>
+                    <DataGridTextColumn Binding="{Binding Valor}" Header="Valor"/>
+                    <DataGridTextColumn Binding="{Binding Status}" Header="Status"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </GroupBox>
 
     </Grid>

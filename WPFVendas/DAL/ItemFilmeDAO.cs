@@ -10,5 +10,12 @@ namespace Locadora.DAL
     class ItemFilmeDAO
     {
         private static Context ctx = SingletonContext.GetInstance();
+
+
+
+        public static List<ItemFilme> ListaFilmesLocacao(int IdLocacao)
+        {
+            return ctx.ItemFilme.Include("Filme").Include("Locacao").Where(x => x.IdItemFilme == IdLocacao).ToList();
+        }
     }
 }

@@ -24,13 +24,33 @@ namespace Locadora.Views.Listar
         List<Model.Locacao> ListaLocacoes = LocacaoDAO.ListarLocacoesAtivas();
 
 
-        private List<dynamic> produtosGrid = new List<dynamic>();
+        private List<dynamic> locacoesGrid = new List<dynamic>();
 
 
         public frmListarLocacoes()
         {
             InitializeComponent();
-            dtLocacoes.ItemsSource = ListaLocacoes;
+
+            //Laço para preencher todos os ITEMFILME no GRID
+            foreach (Model.Locacao x in ListaLocacoes)
+            {
+                dynamic locacaoDyn = new
+                {
+                    Id = x.IdLocacao,
+                    Cliente = x.Cliente.Nome,
+                    Funcionario = x.Funcionario.Nome,
+                    DataLocacao = x.DataLocacao.ToString(),
+                    DataDevolucao = x.DataDevolucao.ToString(),
+                    DataDevolvida = x.DataDevolvida.ToString(),
+                    Valor = x.Valor,
+                    Status = x.Status == true ? "Ativo" : "Devolvido",
+                };
+                //Preencher GRID
+                locacoesGrid.Add(locacaoDyn);
+                dtLocacoes.ItemsSource = locacoesGrid;
+                dtLocacoes.Items.Refresh();
+
+            }
         }
     }
 }

@@ -31,5 +31,10 @@ namespace Locadora.DAL
         {
             return ctx.Funcionarios.Where(x => x.Status == false).ToList();
         }
+
+        public static List<Locacao> ListarLocacoesPorFuncionario(Funcionario c)
+        {
+            return ctx.Locacao.Include("Funcionario").Include("Cliente").Where(x => x.Funcionario.Nome == c.Nome).ToList();
+        }
     }
 }

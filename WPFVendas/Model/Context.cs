@@ -18,7 +18,7 @@ namespace Locadora.Model
         public DbSet<Premio> Premio { get; set; }
         public DbSet<PremioFilme> PremioFilme { get; set; }
         public DbSet<Locacao> Locacao { get; set; }
-        //public ItemFilme ItemFilme { get; set; }
+        public DbSet<ItemFilme> ItemFilme { get; set; }
         public DbSet<Comissao> Comissao { get; set; }
 
     }
