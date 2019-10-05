@@ -48,7 +48,7 @@ namespace Locadora.Views.Relatorios
 
                 List<Model.Locacao> Locacoes = PessoaDAO.ListarLocacoesPorPessoa(c); //Buscar Locações por cliente
 
-                if(Locacoes.Count <= 0) //Verifica se há locações (lista < 0 = não há)
+                if (Locacoes.Count <= 0) //Verifica se há locações (lista < 0 = não há)
                 {
                     throw new Exception("Não há locações para este cliente");
                 }
@@ -61,8 +61,12 @@ namespace Locadora.Views.Relatorios
 
                     dynamic locacaoDyn = new
                     {
+                        ID = x.IdLocacao,
                         Cliente = x.Cliente.Nome,
                         Locacao_ID = Convert.ToInt32(x.IdLocacao),
+                        DataLocacao = x.DataLocacao.ToString(),
+                        DataDevolucao = x.DataDevolucao.ToString(),
+                        DataDevolvida = x.DataDevolvida.ToString(),
                         Status = status,
                     };
                     //Preencher GRID
@@ -71,14 +75,27 @@ namespace Locadora.Views.Relatorios
                     dtLocacaoXCliente.Items.Refresh();
                 }
 
-
-
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void DtLocacaoXCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            dynamic objetoClicado = dtLocacaoXCliente.SelectedItem;
+            Model.Locacao locacaoSelecionada = LocacaoDAO.BuscarLocacaoPorId(objetoClicado.ID);
+
+            List<ItemFilme> listaItemFilmeClicado = locacaoSelecionada.Filmes;
+
+            foreach (ItemFilme x in listaItemFilmeClicado)
+            {
+                MessageBox.Show("Filme: " + x.Filme.ToString() + "\n -----> QTD: " 
+                    + x.Quantidade + "\n -----> Valor:" + x.Valor);
+            }
+
         }
     }
 }

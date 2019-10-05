@@ -50,6 +50,11 @@ namespace Locadora.Views.Locacao
             txtFuncionarioNome.Clear();
             txtQuantidadeLocar.Clear();
             txtValor.Clear();
+            dtDevolucao.SelectedDate = null;
+            dtLocacao.SelectedDate = null;
+
+                dtaFilmesLocar.Items.Clear();
+                dtaFilmesLocar.Items.Refresh();
 
             txtCliente.Focus();
 
@@ -87,9 +92,7 @@ namespace Locadora.Views.Locacao
 
         private void BtnBuscarFuncionario_Click(object sender, RoutedEventArgs e)
         {
-
-
-
+            func = new Funcionario();
             try
             {
                 func.Cpf = txtFuncionario.Text;
@@ -119,6 +122,7 @@ namespace Locadora.Views.Locacao
 
         private void BtnBuscarCliente_Click(object sender, RoutedEventArgs e)
         {
+            c = new Cliente();
             try
             {
                 c.Cpf = txtCliente.Text;
@@ -240,15 +244,12 @@ namespace Locadora.Views.Locacao
             {
                 ItemFilme iff = new ItemFilme();
 
-                //BAIXAR ESTOQUE PRODUTOS
-                FilmeDAO.BaixarEstoque(filmesAdicionados);
-
                 l.Cliente = c;
                 l.DataLocacao = dtLocacao.SelectedDate.Value;
                 l.DataDevolucao = dtDevolucao.SelectedDate.Value;
                 l.Filmes = filmesAdicionados;
                 l.Funcionario = func;
-                l.DataDevolvida = dtDevolucao.SelectedDate.Value;
+                l.DataDevolucao = dtDevolucao.SelectedDate.Value;
                 l.Valor = Convert.ToDouble(lbTotal.Content);
 
                 if (l.Cliente.Status == false)
@@ -263,6 +264,9 @@ namespace Locadora.Views.Locacao
                 double comissaoFuncionario = FuncionarioDAO.EfetivarComissao(l); //Retorna o valor da comissão daquela venda
 
                 LocacaoDAO.CadastrarLocacao(l);
+
+                //BAIXAR ESTOQUE PRODUTOS
+                FilmeDAO.BaixarEstoque(filmesAdicionados);
                 MessageBox.Show("Locação realizada!");
 
                 LimparFormulario();

@@ -62,9 +62,9 @@ namespace Locadora.Views
 
                 if(f.Comissao > 10)
                 {
-                    throw new Exception("A comissão é de no máximo 10%.\nFavor corrigir.");
-                    txtComissaoFunc.Text = "";
+                    txtComissaoFunc.Clear();
                     txtComissaoFunc.Focus();
+                    throw new Exception("A comissão é de no máximo 10%.\nFavor corrigir.");
                 }
 
                 ValidadorCPF.validaCpf(f.Cpf);

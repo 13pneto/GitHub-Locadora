@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Locadora.Views.Relatorios"
         mc:Ignorable="d"
         Title="frmHistoricoLocacaoXFuncionario" Height="704.969" Width="800">
-    <Grid Margin="0,0,0,17">
+    <Grid Margin="0,0,0,6">
         <GroupBox x:Name="groupBox" Header="Locações x Funcionario" HorizontalAlignment="Left" Height="340" Margin="56,144,0,0" VerticalAlignment="Top" Width="698">
             <DataGrid x:Name="dtLocacaoXFuncionario" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="235" Margin="32,55,0,0" VerticalAlignment="Top" Width="621" RenderTransformOrigin="-0.136,0.275">
                 <DataGrid.Columns>
@@ -25,10 +25,10 @@
         <Button x:Name="btnBuscarFuncionario" Click="BtnBuscarFuncionario_Click_1" Content="Buscar" HorizontalAlignment="Left" Margin="367,64,0,0" VerticalAlignment="Top" Width="75"/>
         <Label x:Name="lbFuncionarioEncontrado" Content="" HorizontalAlignment="Left" Margin="182,93,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="lb1" HorizontalAlignment="Left" Height="23" Margin="242,504,0,0" Content="R$ Comissão Liberado" VerticalAlignment="Top" Width="134" RenderTransformOrigin="0.342,0.587"/>
-        <Label x:Name="lb2" HorizontalAlignment="Left" Margin="462,504,0,0" Content="R$ Comissão Bloqueado" VerticalAlignment="Top"/>
+        <Label x:Name="lb1" HorizontalAlignment="Left" Height="27" Margin="242,504,0,0" Content="R$ Comissão Liberado" VerticalAlignment="Top" Width="134" RenderTransformOrigin="0.342,0.587"/>
+        <Label x:Name="lb2" HorizontalAlignment="Left" Margin="462,504,0,0" Content="R$ Comissão Bloqueado" VerticalAlignment="Top" Height="31"/>
         <Label x:Name="lbTotalComissaoRecebido" HorizontalAlignment="Left" Height="23" Margin="242,536,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="lbTotalComissaoReceber" HorizontalAlignment="Left" Margin="462,535,0,0" VerticalAlignment="Top" Height="22" Width="138"/>
+        <Label x:Name="lbTotalComissaoReceber" HorizontalAlignment="Left" Margin="462,535,0,0" VerticalAlignment="Top" Height="24" Width="138"/>
 
     </Grid>
 

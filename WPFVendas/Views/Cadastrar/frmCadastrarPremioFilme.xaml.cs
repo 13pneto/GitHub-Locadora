@@ -77,6 +77,7 @@ namespace Locadora.Views
 
         private void BtnBuscarFilme_Click(object sender, RoutedEventArgs e) //Buscar Filme
         {
+            f = new Filme();
             try
             {
                 f.Titulo = txtFilme.Text;
@@ -109,6 +110,7 @@ namespace Locadora.Views
 
         private void BtnBuscarPremio_Click(object sender, RoutedEventArgs e) //Buscar Premio
         {
+            p = new Premio();
             try
             {
                 p.Descricao = txtPremio.Text;

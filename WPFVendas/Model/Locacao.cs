@@ -19,7 +19,7 @@ namespace Locadora.Model
         public Funcionario Funcionario { get; set; } //Funcionario responsavel pela locação
         public DateTime DataLocacao { get; set; }
         public DateTime DataDevolucao { get; set; } //Data que é para devolver a locação
-        public DateTime DataDevolvida { get; set; } //Data que foi devolvido a locação (pode ocorrer atrasos)
+        public DateTime? DataDevolvida { get; set; } //Data que foi devolvido a locação (pode ocorrer atrasos)
         public double Valor { get; set; }
         public bool Status { get; set; } //true = ativo & false = inativo
         public DateTime CriadoEm { get; set; }
@@ -28,6 +28,7 @@ namespace Locadora.Model
         {
             CriadoEm = DateTime.Now;
             Status = true;
+            DataDevolvida = null;
         }
 
         //public Locacao()

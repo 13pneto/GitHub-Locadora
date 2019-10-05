@@ -8,11 +8,15 @@
         Title="Locação x Cliente" Height="734.536" Width="800">
     <Grid>
         <GroupBox x:Name="groupBox" Header="Locações x Cliente" HorizontalAlignment="Left" Height="340" Margin="56,144,0,0" VerticalAlignment="Top" Width="698">
-            <DataGrid x:Name="dtLocacaoXCliente" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="235" Margin="32,55,0,0" VerticalAlignment="Top" Width="621" RenderTransformOrigin="-0.136,0.275">
+            <DataGrid x:Name="dtLocacaoXCliente" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="235" Margin="32,55,0,0" VerticalAlignment="Top" Width="621" RenderTransformOrigin="-0.136,0.275" SelectionChanged="DtLocacaoXCliente_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Cliente}" Header="Filme" Width="170"/>
+                    <DataGridTextColumn Binding="{Binding ID}" Header="ID"/>
+                    <DataGridTextColumn Binding="{Binding Cliente}" Header="Cliente" Width="170"/>
                     <DataGridTextColumn Binding="{Binding Locacao_ID}" Header="Estoque" Width="70"/>
                     <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="90"/>
+                    <DataGridTextColumn Binding="{Binding DataLocacao}" Header="DataLocacao" Width="90"/>
+                    <DataGridTextColumn Binding="{Binding DataDevolucao}" Header="DataDevolucao" Width="90"/>
+                    <DataGridTextColumn Binding="{Binding DataDevolvida}" Header="DataDevolvida" Width="90"/> 
                 </DataGrid.Columns>
             </DataGrid>
         </GroupBox>

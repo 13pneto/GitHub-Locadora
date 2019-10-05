@@ -58,9 +58,9 @@ namespace Locadora.Views.Locacao
                 }
                 if (l.DataDevolvida > l.DataDevolucao) // Verifica se há atraso na devolução
                 {
-                    int diferencaData = l.DataDevolvida.Subtract(l.DataDevolucao).Days;
+                    int diferencaData = l.DataDevolvida.Value.Subtract(l.DataDevolucao).Days;
                     double valorMulta = LocacaoDAO.CalcularMulta(l);
-                    MessageBox.Show("A locação está sendo entregue " + diferencaData + " dia(s) atrasado! \nSerá cobrado R$ " + valorMulta + " de multa.");
+                   MessageBox.Show("A locação está sendo entregue " + diferencaData + " dia(s) atrasado! \nSerá cobrado R$ " + valorMulta + " de multa.");
                     lbValorMulta.Content = valorMulta;
                 }
 

@@ -57,7 +57,7 @@ namespace Locadora.DAL
 
         public static double CalcularMulta(Locacao l)
         {
-            int diferencaData = l.DataDevolvida.Subtract(l.DataDevolucao).Days;
+            int diferencaData = l.DataDevolvida.Value.Subtract(l.DataDevolucao).Days;
             double valorMulta = 1.00;
             double total = 0;
 
